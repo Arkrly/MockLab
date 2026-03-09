@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "skills": {
+    "find-bugs": {
+      "source": "getsentry/skills",
+      "sourceType": "github",
+      "computedHash": "7bf00be700d1d205b747126aa96d3587bbc2855cd09897614676e179eebe35ed"
+    }
+  }
+}

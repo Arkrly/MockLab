@@ -1,0 +1,23 @@
+# version: '3.8'
+
+services:
+  mysql-test:
+    image: mysql:8.0
+    container_name: mocklab-mysql-test
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: mocklab
+      MYSQL_USER: mocklab
+      MYSQL_PASSWORD: mocklabpass
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-test-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  mysql-test-data:
