@@ -4,14 +4,23 @@
 
 ---
 
+## ⚠️ Project Status
+
+This project has been **archived**. The original full-stack implementation (Spring Boot backend + Angular frontend) has been moved to separate repositories:
+
+- **Backend**: [mocklab-api](https://github.com/arkrly/mocklab-api)
+- **Frontend**: [mocklab-web](https://github.com/arkrly/mocklab-web)
+
+---
+
 ## 🏗️ Architecture
 
-MockLab is a full-stack SaaS application composed of two modules:
+MockLab was a full-stack SaaS application composed of two modules:
 
-| Module          | Tech Stack                                     | Directory      |
-| --------------- | ---------------------------------------------- | -------------- |
-| **mocklab-api** | Spring Boot 3.5 · Java 21 · MySQL 8 · JWT      | `mocklab-api/` |
-| **mocklab-web** | Angular 17+ · TypeScript · Tailwind CSS · SCSS | `mocklab-web/` |
+| Module          | Tech Stack                                     | Repository                |
+| --------------- | ---------------------------------------------- | ------------------------- |
+| **mocklab-api** | Spring Boot 3.5 · Java 21 · MySQL 8 · JWT      | [arkrly/mocklab-api](https://github.com/arkrly/mocklab-api) |
+| **mocklab-web** | Angular 17+ · TypeScript · Tailwind CSS · SCSS | [arkrly/mocklab-web](https://github.com/arkrly/mocklab-web) |
 
 ---
 
@@ -37,69 +46,33 @@ MockLab is a full-stack SaaS application composed of two modules:
 
 ---
 
-## 📁 Project Structure
+## 📁 Archived Project Structure
 
 ```
-MockAPI/
-├── mocklab-api/                    # Spring Boot backend
+MockAPI/                          # This repository (archived)
+├── mocklab-api/                  # [Moved to] arkrly/mocklab-api
 │   ├── src/main/java/io/mocklab/api/
-│   │   ├── controller/             # REST controllers (Auth, Workspace, Endpoint, MockServer)
-│   │   ├── dto/                    # Request & response DTOs
-│   │   ├── entity/                 # JPA entities (User, Workspace, MockEndpoint, RequestLog, etc.)
-│   │   ├── enums/                  # HttpMethodType, UserPlan, WorkspaceRole
-│   │   ├── exception/              # Global exception handler, custom exceptions
-│   │   ├── repository/             # Spring Data JPA repositories
-│   │   ├── scheduler/              # Stateful record cleanup scheduler
-│   │   ├── security/               # JWT utils, API key filter, Security config
-│   │   └── service/                # Business logic services
-│   ├── docker-compose.yml          # MySQL 8 dev database
+│   │   ├── controller/           # REST controllers (Auth, Workspace, Endpoint, MockServer)
+│   │   ├── dto/                  # Request & response DTOs
+│   │   ├── entity/               # JPA entities (User, Workspace, MockEndpoint, RequestLog, etc.)
+│   │   ├── enums/                # HttpMethodType, UserPlan, WorkspaceRole
+│   │   ├── exception/            # Global exception handler, custom exceptions
+│   │   ├── repository/           # Spring Data JPA repositories
+│   │   ├── scheduler/            # Stateful record cleanup scheduler
+│   │   ├── security/             # JWT utils, API key filter, Security config
+│   │   └── service/              # Business logic services
+│   ├── docker-compose.yml        # MySQL 8 dev database
 │   └── pom.xml
 │
-└── mocklab-web/                    # Angular 17+ frontend
+└── mocklab-web/                  # [Moved to] arkrly/mocklab-web
     └── src/app/
-        ├── core/                   # Guards, interceptors, models, services
+        ├── core/                 # Guards, interceptors, models, services
         ├── features/
-        │   ├── auth/               # Login & register components
-        │   ├── dashboard/          # Dashboard, workspace detail, endpoint creation, request logs
-        │   └── settings/           # User settings
-        └── shared/                 # Reusable components & pipes
+        │   ├── auth/              # Login & register components
+        │   ├── dashboard/         # Dashboard, workspace detail, endpoint creation, request logs
+        │   └── settings/          # User settings
+        └── shared/                # Reusable components & pipes
 ```
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- **Java 21+**
-- **Node.js 18+** & **npm**
-- **Docker** (for MySQL)
-
-### 1. Start the Database
-
-```bash
-cd mocklab-api
-docker compose up -d
-```
-
-### 2. Run the Backend
-
-```bash
-cd mocklab-api
-./mvnw spring-boot:run
-```
-
-The API server starts at **http://localhost:8080**.
-
-### 3. Run the Frontend
-
-```bash
-cd mocklab-web
-npm install
-ng serve
-```
-
-The frontend starts at **http://localhost:4200**.
 
 ---
 
@@ -135,7 +108,7 @@ The frontend starts at **http://localhost:4200**.
 
 ---
 
-## 📝 Current Progress
+## 📝 Completed Features
 
 - [x] Full backend API with authentication, workspace, endpoint, and mock server controllers
 - [x] JPA entities and repositories for all domain models
